@@ -5,7 +5,7 @@ import PageShell from "../components/PageShell";
 const CFG = {
   "1-3": {
     c: ["#FF7A59", "#FFC93C", "#3CCB9F", "#5AA9F6", "#B58CFF"],
-    s: [30],
+    s: [5, 10, 15, 20, 25, 30, 35, 40],
     st: [],
     ideas: {
       en: ["Draw a happy sun ☀️", "Draw a colourful flower 🌸", "Draw a big balloon 🎈"],
@@ -16,7 +16,7 @@ const CFG = {
 
   "4-6": {
     c: ["#26275A", "#FF7A59", "#FFC93C", "#3CCB9F", "#5AA9F6", "#B58CFF"],
-    s: [8],
+    s: [2, 5, 8, 12, 16, 20, 25, 30],
     st: ["🌳", "🏠", "☀️", "🐘", "🦋", "🌸", "🚗", "⭐"],
     ideas: {
       en: ["Draw your favourite animal", "Draw a beautiful garden", "Draw your dream house", "Draw a sunny day"],
@@ -27,7 +27,7 @@ const CFG = {
 
   "7-10": {
     c: ["#26275A", "#FF7A59", "#FFC93C", "#3CCB9F", "#5AA9F6", "#B58CFF", "#FF6FA5", "#8B5A2B"],
-    s: [3, 8, 18],
+    s: [1, 3, 5, 8, 12, 16, 20, 25, 30, 40],
     st: [],
     ideas: {
       en: [
@@ -164,7 +164,7 @@ export default function PlayPage({
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   };
 
-  // Save the previous drawing for undo.
+  // Save previous drawing for undo.
   const saveSnapshot = () => {
     const canvas = ref.current;
     if (!canvas) return;
@@ -176,6 +176,7 @@ export default function PlayPage({
     }
   };
 
+  // Reset when age group changes.
   useEffect(() => {
     setCol(cfg.c[0]);
     setSize(cfg.s[0]);
@@ -184,7 +185,7 @@ export default function PlayPage({
 
     undoStack.current = [];
     clearCanvas();
-  }, [ageGroup]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [ageGroup]);
 
   // Convert pointer position into canvas position.
   const pos = (e) => {
@@ -197,13 +198,13 @@ export default function PlayPage({
     ];
   };
 
-  // Draw a selected shape.
+  // Draw selected shape.
   const drawShape = (ctx, shape, x, y) => {
     const s = 55;
 
     ctx.beginPath();
     ctx.strokeStyle = col;
-    ctx.lineWidth = Math.max(size, 4);
+    ctx.lineWidth = Math.max(size, 2);
     ctx.lineJoin = "round";
     ctx.lineCap = "round";
 
@@ -246,6 +247,7 @@ export default function PlayPage({
 
     if (shape === "heart") {
       ctx.moveTo(x, y + s / 2);
+
       ctx.bezierCurveTo(
         x - s, y - s / 5,
         x - s / 2, y - s,
@@ -264,7 +266,7 @@ export default function PlayPage({
     ctx.stroke();
   };
 
-  // Handle the beginning of a drawing action.
+  // Start drawing.
   const down = (e) => {
     const canvas = ref.current;
     if (!canvas) return;
@@ -274,14 +276,12 @@ export default function PlayPage({
 
     saveSnapshot();
 
-    // Draw selected shape.
     if (tool.startsWith("shape:")) {
       const shape = tool.split(":")[1];
       drawShape(ctx, shape, x, y);
       return;
     }
 
-    // Draw selected sticker.
     if (tool.startsWith("stamp:")) {
       const stamp = tool.replace("stamp:", "");
 
@@ -292,18 +292,15 @@ export default function PlayPage({
       return;
     }
 
-    // Start brush or eraser.
     drawing.current = true;
-
     canvas.setPointerCapture(e.pointerId);
 
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
-
     ctx.strokeStyle = tool === "eraser" ? "#FFFFFF" : col;
-    ctx.lineWidth = tool === "eraser"
-      ? Math.max(size * 3, 30)
-      : size;
+
+    // Eraser is three times the selected brush size.
+    ctx.lineWidth = tool === "eraser" ? size * 3 : size;
 
     ctx.beginPath();
     ctx.moveTo(x, y);
@@ -322,9 +319,7 @@ export default function PlayPage({
     const [x, y] = pos(e);
 
     ctx.strokeStyle = tool === "eraser" ? "#FFFFFF" : col;
-    ctx.lineWidth = tool === "eraser"
-      ? Math.max(size * 3, 30)
-      : size;
+    ctx.lineWidth = tool === "eraser" ? size * 3 : size;
 
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
@@ -333,11 +328,17 @@ export default function PlayPage({
     ctx.stroke();
   };
 
-  const stopDrawing = () => {
+  const stopDrawing = (e) => {
     drawing.current = false;
+
+    const canvas = ref.current;
+
+    if (canvas && canvas.hasPointerCapture?.(e.pointerId)) {
+      canvas.releasePointerCapture(e.pointerId);
+    }
   };
 
-  // Undo the last action.
+  // Undo last action.
   const undo = () => {
     const canvas = ref.current;
 
@@ -356,13 +357,13 @@ export default function PlayPage({
     img.src = previous;
   };
 
-  // Clear the complete drawing.
+  // Clear drawing.
   const clear = () => {
     saveSnapshot();
     clearCanvas();
   };
 
-  // Download artwork.
+  // Save artwork.
   const saveDrawing = () => {
     const canvas = ref.current;
     if (!canvas) return;
@@ -392,7 +393,7 @@ export default function PlayPage({
 
           <button
             className="kp-btn alt"
-            onClick={() => setIdea((idea + 1) % ideas.length)}
+            onClick={() => setIdea((previous) => (previous + 1) % ideas.length)}
           >
             {labels.newIdea}
           </button>
@@ -408,6 +409,7 @@ export default function PlayPage({
           {cfg.c.map((c) => (
             <button
               key={c}
+              type="button"
               className={`kp-sw ${col === c && tool === "brush" ? "selected" : ""}`}
               style={{ background: c }}
               aria-label={`Colour ${c}`}
@@ -419,28 +421,58 @@ export default function PlayPage({
           ))}
         </div>
 
-        {/* Brush size */}
-        <h3>{labels.size}</h3>
+        {/* Brush size slider */}
+        <h3>
+          {labels.size}: <strong>{size}px</strong>
+        </h3>
 
+        <div className="brush-size-control">
+          <span>1</span>
+
+          <input
+            type="range"
+            min="1"
+            max="40"
+            step="1"
+            value={size}
+            onChange={(e) => setSize(Number(e.target.value))}
+            aria-label={labels.size}
+          />
+
+          <span>40</span>
+
+          <span
+            className="brush-preview"
+            style={{
+              width: `${Math.max(size, 4)}px`,
+              height: `${Math.max(size, 4)}px`,
+              backgroundColor: col
+            }}
+          />
+        </div>
+
+        {/* Quick brush sizes */}
         <div className="kp-row">
           {cfg.s.map((s) => (
             <button
               key={s}
-              className="kp-btn alt"
+              type="button"
+              className={`kp-btn alt ${size === s ? "selected" : ""}`}
               onClick={() => setSize(s)}
             >
-              {s === size ? "✓ " : ""}● {s}
+              {size === s ? "✓ " : ""}● {s}
             </button>
           ))}
         </div>
 
-        {/* Ready-made shapes */}
+        {/* Shapes */}
         <h3>{labels.shapes}</h3>
 
         <div className="kp-row">
           {SHAPES.map((shape) => (
             <button
               key={shape.id}
+              type="button"
               className={`kp-btn alt ${tool === `shape:${shape.id}` ? "selected" : ""}`}
               onClick={() => setTool(`shape:${shape.id}`)}
               title={labels[shape.id]}
@@ -449,6 +481,7 @@ export default function PlayPage({
               <span style={{ fontSize: "25px" }}>
                 {shape.icon}
               </span>
+
               <span>{labels[shape.id]}</span>
             </button>
           ))}
@@ -463,6 +496,7 @@ export default function PlayPage({
               {cfg.st.map((stamp) => (
                 <button
                   key={stamp}
+                  type="button"
                   className={`kp-btn alt ${tool === `stamp:${stamp}` ? "selected" : ""}`}
                   onClick={() => setTool(`stamp:${stamp}`)}
                 >
@@ -477,6 +511,7 @@ export default function PlayPage({
         <div className="kp-row play-tools">
 
           <button
+            type="button"
             className={`kp-btn alt ${tool === "brush" ? "selected" : ""}`}
             onClick={() => setTool("brush")}
           >
@@ -484,6 +519,7 @@ export default function PlayPage({
           </button>
 
           <button
+            type="button"
             className={`kp-btn alt ${tool === "eraser" ? "selected" : ""}`}
             onClick={() => setTool("eraser")}
           >
@@ -491,6 +527,7 @@ export default function PlayPage({
           </button>
 
           <button
+            type="button"
             className="kp-btn alt"
             onClick={undo}
           >
@@ -498,6 +535,7 @@ export default function PlayPage({
           </button>
 
           <button
+            type="button"
             className="kp-btn alt"
             onClick={clear}
           >
@@ -505,6 +543,7 @@ export default function PlayPage({
           </button>
 
           <button
+            type="button"
             className="kp-btn"
             onClick={saveDrawing}
           >
@@ -523,10 +562,14 @@ export default function PlayPage({
           width="800"
           height="480"
           className="play-canvas"
+          style={{ touchAction: "none" }}
           onPointerDown={down}
           onPointerMove={move}
           onPointerUp={stopDrawing}
           onPointerCancel={stopDrawing}
+          onLostPointerCapture={() => {
+            drawing.current = false;
+          }}
         />
       </div>
 
