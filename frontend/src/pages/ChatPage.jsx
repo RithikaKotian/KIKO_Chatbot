@@ -3,8 +3,11 @@ import { useState, useRef, useEffect } from "react";
 import "./ChatPage.css";
 import { speak, VOICE } from "../utils/speech";
 
-const API_URL = "http://127.0.0.1:8000/api/chat";
-const TRANSLATE_URL = "http://127.0.0.1:8000/api/translate-chat";
+
+const API_BASE_URL = "https://kiko-chatbot-ikxc.onrender.com";
+
+const API_URL = `${API_BASE_URL}/api/chat`;
+const TRANSLATE_URL = `${API_BASE_URL}/api/translate-chat`;
 
 const LANGUAGES = [
   { id: "en", label: "English", voice: "en-IN" },
