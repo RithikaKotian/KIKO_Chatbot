@@ -266,3 +266,39 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* PLAY & CREATE - Adjustable Brush Size */
+
+.brush-size-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 450px;
+  margin: 12px 0 18px;
+  padding: 10px 0;
+}
+
+.brush-size-control input[type="range"] {
+  flex: 1;
+  min-width: 80px;
+  height: 10px;
+  cursor: pointer;
+  accent-color: #6c4de6;
+}
+
+.brush-size-control span {
+  font-weight: 800;
+  color: #39345e;
+}
+
+.brush-size-control .brush-preview {
+  display: inline-block;
+  flex-shrink: 0;
+  min-width: 4px;
+  min-height: 4px;
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50%;
+  aspect-ratio: 1;
+}
