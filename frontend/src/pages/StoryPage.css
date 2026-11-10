@@ -1,0 +1,160 @@
+
+.story-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.story-list-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.story-list-illustration {
+  min-width: 90px;
+  height: 90px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  background: #fff0d8;
+  font-size: 42px;
+}
+
+.story-list-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.audio-story-card {
+  text-align: center;
+}
+
+.audio-story-illustration {
+  width: 100%;
+  min-height: 210px;
+  margin: 18px auto;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #fff0d8, #e5f5e9);
+  display: grid;
+  place-items: center;
+}
+
+.audio-story-illustration span {
+  font-size: clamp(80px, 18vw, 130px);
+}
+
+.audio-story-status {
+  min-height: 28px;
+  margin: 12px 0;
+  font-weight: 600;
+  color: #65528a;
+}
+
+.audio-story-controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0 24px;
+}
+
+.audio-story-text {
+  text-align: left;
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 18px;
+  background: #fffaf1;
+}
+
+.audio-story-text h3 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.audio-story-text p {
+  white-space: pre-line;
+  line-height: 1.9;
+  font-size: 1.05rem;
+  color: #38333d;
+}
+
+.story-finished-message {
+  font-weight: 600;
+  color: #4d805d;
+  margin-top: 18px;
+}
+
+@media (max-width: 480px) {
+  .story-list-card {
+    align-items: flex-start;
+  }
+
+  .story-list-illustration {
+    min-width: 68px;
+    height: 68px;
+    font-size: 32px;
+  }
+
+  .audio-story-illustration {
+    min-height: 170px;
+  }
+}
+
+.story-language-selector {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 12px 0 18px;
+}
+
+.story-language-selector label {
+  font-weight: 600;
+}
+
+.story-language-selector select {
+  padding: 10px 14px;
+  border: 1px solid #ded5e9;
+  border-radius: 12px;
+  background: white;
+  font-size: 15px;
+  color: #38333d;
+}
+
+.story-loading {
+  text-align: center;
+  padding: 30px 18px;
+}
+
+.story-loading-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+/* MORAL OF THE STORY */
+
+.story-moral {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 16px;
+  background: #fff4d6;
+  border: 2px solid #f5d58b;
+  text-align: center;
+}
+
+.story-moral h3 {
+  color: #80551b;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.story-moral p {
+  color: #49351b;
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 0;
+}

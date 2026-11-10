@@ -1,0 +1,242 @@
+[
+ {
+  "id": "s00",
+  "title": "The Thirsty Crow",
+  "age_group": "1-3",
+  "category": "Aesop",
+  "source": "Aesop’s Fables",
+  "license": "Public domain",
+  "verification": "pending",
+  "language": "en",
+  "moral": "",
+  "question": null,
+  "pages": [
+   [
+    "🐦",
+    "A crow is very thirsty."
+   ],
+   [
+    "🏺",
+    "Look! A pot with a little water."
+   ],
+   [
+    "🪨",
+    "Plop! Plop! He drops pebbles in."
+   ],
+   [
+    "💧",
+    "The water comes up, up, up!"
+   ],
+   [
+    "😋",
+    "Glug, glug! Yum!"
+   ]
+  ]
+ },
+ {
+  "id": "s01",
+  "title": "The Hare and the Tortoise",
+  "age_group": "1-3",
+  "category": "Aesop",
+  "source": "Aesop’s Fables",
+  "license": "Public domain",
+  "verification": "pending",
+  "language": "en",
+  "moral": "",
+  "question": null,
+  "pages": [
+   [
+    "🐇",
+    "Hare is fast."
+   ],
+   [
+    "🐢",
+    "Tortoise is slow."
+   ],
+   [
+    "🏁",
+    "Ready, steady, go! They race."
+   ],
+   [
+    "😴",
+    "Hare goes to sleep. Zzz."
+   ],
+   [
+    "🏆",
+    "Tortoise wins the race!"
+   ]
+  ]
+ },
+ {
+  "id": "s10",
+  "title": "The Lion and the Mouse",
+  "age_group": "4-6",
+  "category": "Aesop",
+  "source": "Aesop’s Fables",
+  "license": "Public domain",
+  "verification": "pending",
+  "language": "en",
+  "moral": "Even the smallest friend can be a great help.",
+  "question": [
+   "Who set the lion free?",
+   [
+    "The mouse",
+    "The fox",
+    "The hunter"
+   ],
+   0
+  ],
+  "pages": [
+   [
+    "🐭",
+    "A tiny mouse ran over a sleeping lion."
+   ],
+   [
+    "🦁",
+    "The lion woke up and grabbed her. “Please let me go,” said the mouse. “One day I will help you.”"
+   ],
+   [
+    "😄",
+    "The lion laughed, but he let her go."
+   ],
+   [
+    "🕸️",
+    "Later, hunters trapped the lion in a net. He roared and roared."
+   ],
+   [
+    "🐭",
+    "The mouse heard him and ran to help. She chewed the ropes with her sharp teeth."
+   ],
+   [
+    "🤝",
+    "The lion was free! Now he knew that even a small friend can help."
+   ]
+  ]
+ },
+ {
+  "id": "s11",
+  "title": "The Thirsty Crow",
+  "age_group": "4-6",
+  "category": "Aesop",
+  "source": "Aesop’s Fables",
+  "license": "Public domain",
+  "verification": "pending",
+  "language": "en",
+  "moral": "Where there is a will, there is a way.",
+  "question": [
+   "What did the crow drop in the pot?",
+   [
+    "Pebbles",
+    "Leaves",
+    "Sticks"
+   ],
+   0
+  ],
+  "pages": [
+   [
+    "🐦",
+    "One hot day, a crow was flying everywhere looking for water."
+   ],
+   [
+    "🏺",
+    "At last he saw a pot with a little water at the bottom. His beak could not reach it."
+   ],
+   [
+    "💭",
+    "He tried to tip the pot, but it was too heavy. Then he had an idea."
+   ],
+   [
+    "🪨",
+    "He dropped small pebbles into the pot, one by one. The water rose higher and higher."
+   ],
+   [
+    "😋",
+    "At last the crow could drink. He was not thirsty any more."
+   ]
+  ]
+ },
+ {
+  "id": "s20",
+  "title": "The Monkey and the Crocodile",
+  "age_group": "7-10",
+  "category": "Panchatantra",
+  "source": "Panchatantra",
+  "license": "Public domain",
+  "verification": "pending",
+  "language": "en",
+  "moral": "Stay calm and think quickly in danger, and do not trust one who betrays a friend.",
+  "question": [
+   "Where did the monkey say his heart was?",
+   [
+    "In the tree",
+    "In the river",
+    "At home"
+   ],
+   0
+  ],
+  "pages": [
+   [
+    "🐒",
+    "A clever monkey lived in a jamun tree on a river bank. A crocodile became his friend, and the monkey shared sweet jamun fruits with him every day."
+   ],
+   [
+    "🐊",
+    "The crocodile took some fruits home to his wife. She loved them and said, “If the fruit is so sweet, the monkey’s heart must be sweeter. Bring it to me!”"
+   ],
+   [
+    "🌊",
+    "The crocodile invited the monkey for a ride to his home. In the middle of the river, he told the monkey the truth."
+   ],
+   [
+    "💡",
+    "The monkey stayed calm. “My heart is hanging on the tree,” he said. “Take me back and I will fetch it.”"
+   ],
+   [
+    "🌳",
+    "The crocodile took him back. The monkey leapt up the tree and said, “Foolish friend, nobody keeps a heart on a tree. Our friendship is over!”"
+   ]
+  ]
+ },
+ {
+  "id": "s21",
+  "title": "The Blue Jackal",
+  "age_group": "7-10",
+  "category": "Panchatantra",
+  "source": "Panchatantra",
+  "license": "Public domain",
+  "verification": "pending",
+  "language": "en",
+  "moral": "Do not pretend to be what you are not. The truth always comes out.",
+  "question": [
+   "Why was the jackal found out?",
+   [
+    "He howled",
+    "He lost his crown",
+    "He fell asleep"
+   ],
+   0
+  ],
+  "pages": [
+   [
+    "🦊",
+    "A jackal wandered into a town and dogs chased him. He jumped into a vat of blue dye to hide."
+   ],
+   [
+    "🔵",
+    "When he came out, he was blue from nose to tail! The forest animals had never seen such a creature."
+   ],
+   [
+    "👑",
+    "“I am a special king sent to rule you,” said the jackal. The animals made him their king."
+   ],
+   [
+    "🐺",
+    "He began to ignore the other jackals and drove them away, because he felt too grand for them."
+   ],
+   [
+    "🌕",
+    "One moonlit night, jackals howled in the distance. The blue jackal forgot himself and howled along. The animals saw he was only a jackal and chased him away."
+   ]
+  ]
+ }
+]

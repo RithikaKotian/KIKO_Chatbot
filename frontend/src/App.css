@@ -1,0 +1,68 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Nunito", "Noto Sans Kannada", system-ui, sans-serif; }
+
+.app {
+  min-height: 100vh; padding: 20px;
+  background-color: #1f2a6b;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 14px 14px;
+}
+.app-sheet {
+  max-width: 800px; margin: 0 auto; padding: 24px;
+  background: #fef0cf; color: #232c78;
+  border-radius: 36px; box-shadow: 0 10px 0 rgba(0, 0, 0, 0.18);
+}
+.app-logo { margin: 0 0 8px; font-size: 2rem; letter-spacing: 0.04em; }
+.app-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+.app-chip {
+  font: inherit; font-weight: 800; color: #fff; background: #232c78;
+  border: 0; border-radius: 999px; padding: 8px 18px; cursor: pointer;
+}
+
+.age-picker { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; margin-top: 12px; }
+.age-picker button {
+  border: 0; border-radius: 36px; padding: 24px 12px;
+  font: inherit; font-weight: 800; font-size: 1.4rem; color: #26275a;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.2); cursor: pointer;
+}
+.age-picker span { display: block; font-size: 4rem; }
+.age-picker small { display: block; font-weight: 600; font-size: 0.9rem; }
+
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; margin-top: 12px; }
+.tile {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 20px 10px; border: 0; border-radius: 32px;
+  font: inherit; font-weight: 800; font-size: 1.1rem; color: #26275a;
+  box-shadow: 0 7px 0 rgba(0, 0, 0, 0.2); cursor: pointer;
+}
+.tile span { font-size: 3.2rem; }
+.tile:nth-child(1) { background: #ff7a59; } .tile:nth-child(2) { background: #ffc93c; }
+.tile:nth-child(3) { background: #3ccb9f; } .tile:nth-child(4) { background: #5aa9f6; }
+.tile:nth-child(5) { background: #b58cff; } .tile:nth-child(6) { background: #ff6fa5; }
+.tile:active { transform: translateY(5px); box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2); }
+.app-soon { margin: 16px 0 0; font-weight: 700; }
+button:focus-visible { outline: 4px solid #b58cff; outline-offset: 3px; }
+
+.app-langs { display: flex; gap: 6px; flex-wrap: wrap; }
+.app-chip.on { background: #ffc93c; color: #232c78; }
+.ask { margin: 8px 0 18px; }
+.ask-hero { display: flex; gap: 12px; align-items: center; }
+.ask-panda { font-size: 4rem; line-height: 1; }
+.ask-bubble { flex: 1; background: #fff; border: 3px solid #bfddf3; border-radius: 26px 26px 26px 6px; padding: 8px 16px; font-weight: 700; }
+.ask-bar { display: flex; gap: 8px; margin-top: 10px; }
+.ask-bar input { flex: 1; min-width: 0; font: inherit; border: 3px solid #bfddf3; border-radius: 999px; padding: 6px 16px; background: #fff; color: #232c78; }
+.ask-mic, .ask-go { font: inherit; font-weight: 800; border: 0; border-radius: 999px; cursor: pointer; box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2); color: #232c78; }
+.ask-mic { width: 54px; height: 54px; font-size: 1.5rem; background: #3ccb9f; }
+.ask-mic.on { background: #ff6fa5; }
+.ask-go { background: #ffc93c; padding: 6px 20px; }
+
+.chat-home-tile {
+  background: #7560e8 !important;
+  color: white !important;
+  border: 3px solid #b8aaff;
+}
+
+.chat-home-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 0 rgba(0, 0, 0, 0.2);
+}

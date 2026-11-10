@@ -1,0 +1,59 @@
+/* KIKO Rhymes & Songs page. Based on your stylesheet; the unused kiko-song-* block was left out. */
+.rhymes-page{width:100%;min-height:100vh;box-sizing:border-box;padding:30px 24px 60px;color:#29241e;font-family:"Nunito","Noto Sans Kannada",system-ui,sans-serif;background-color:#17264f;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1px);background-size:7px 7px}
+.rhymes-header{width:100%;max-width:1100px;margin:0 auto 24px;padding:12px 8px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;color:#fff6df}
+.rhymes-tag{margin:0 0 8px;color:#ffdc8a;font-size:13px;font-weight:800;letter-spacing:1.2px}
+.rhymes-header h1{margin:0 0 10px;color:#fff6df;font-size:clamp(27px,4vw,38px);line-height:1.2}
+.rhymes-header p{margin:6px 0;color:#e8eaf4;font-size:15px;line-height:1.5}
+.rhymes-age{display:flex;flex-direction:column;align-items:center;gap:6px;padding:13px 20px;border-radius:22px;background:#293c70;color:#fff6df;flex-shrink:0}
+.rhymes-age span{font-size:13px}.rhymes-age strong{font-size:16px}
+.rhyme-language-selector{width:100%;max-width:1100px;margin:0 auto 22px;display:flex;justify-content:flex-end;align-items:center;flex-wrap:wrap;gap:12px;color:#fff6df}
+.rhyme-language-selector label{font-size:15px;font-weight:800}
+.rhyme-language-selector select{padding:10px 16px;border:2px solid #e8d8b5;border-radius:22px;background:#fff6df;color:#29241e;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.rhymes-library{width:100%;max-width:1100px;margin:0 auto;padding:30px;background:#fff6df;border:2px solid #e8d8b5;border-radius:30px;box-shadow:0 8px 0 #e6d4a7}
+.rhymes-library h2{margin:0 0 12px;color:#29241e;font-size:27px;font-weight:900}
+.rhymes-library>p{margin:0;color:#81735c;font-size:15px}
+.rhymes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:20px;margin-top:28px}
+.rhyme-card{min-width:0;min-height:190px;padding:20px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;border:2px solid #e8d8b5;border-radius:24px;background:#fffdf6;color:#29241e;cursor:pointer;box-shadow:0 5px 0 #e5d4ad;transition:transform .2s,box-shadow .2s;font-family:inherit}
+.rhyme-card:hover{transform:translateY(-5px);box-shadow:0 9px 0 #e5d4ad}
+.rhyme-symbol{font-size:43px}
+.rhyme-category{color:#92703b;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.7px}
+.rhyme-card h3{margin:0;font-size:17px;font-weight:900;line-height:1.4;text-align:center;overflow-wrap:anywhere}
+.rhyme-open{margin-top:5px;color:#846027;font-size:13px;font-weight:800}
+.rhyme-player{width:100%;max-width:1100px;margin:25px auto;padding:10px;color:#25211d}
+.rhyme-back{display:inline-flex;align-items:center;justify-content:center;margin-bottom:18px;padding:12px 22px;border:none;border-radius:30px;background:#fff0ca;color:#25211d;font-family:inherit;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 4px 0 #e7d6a9;transition:transform .2s}
+.rhyme-back:hover{transform:translateY(-2px)}
+.rhyme-player-card{width:100%;padding:30px;background:#fff6df;border:2px solid #e8d8b5;border-radius:32px;box-shadow:0 9px 0 #e6d4a7}
+.rhyme-cover{padding:20px 15px 25px;text-align:center}
+.rhyme-cover>span{display:inline-flex;align-items:center;justify-content:center;width:125px;height:125px;border-radius:50%;background:#e5efff;font-size:68px;box-shadow:0 7px 0 #cbd8e8;animation:rhymeFloat 3s ease-in-out infinite}
+.rhyme-cover>p{margin:22px 0 8px;color:#8c6b36;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:1px}
+.rhyme-cover h2{margin:8px 0 12px;font-size:clamp(25px,4vw,36px);font-weight:900;line-height:1.3}
+.rhyme-cover small{color:#82735d;font-size:15px}
+.rhyme-lyrics{width:100%;max-width:850px;margin:0 auto;text-align:center}
+.rhyme-lyrics h3{margin:15px 0 20px;color:#473c2d;font-size:22px}
+.karaoke-lyrics{margin:15px auto 25px;padding:22px 15px;background:#fffdf7;border:1px dashed #ddcba5;border-radius:24px}
+.karaoke-line{margin:7px 0;padding:4px 14px;border-radius:16px;color:#302a23;font-size:clamp(17px,2vw,23px);line-height:1.7;overflow-wrap:break-word;transition:background .15s,transform .15s}
+.karaoke-line.is-active{background:#ffe08a;font-weight:800;transform:scale(1.02)}
+.karaoke-lyrics--dim .karaoke-line{opacity:.5}
+.rhyme-fallback{margin:0 0 8px;color:#8c6b36;font-size:14px;font-weight:700}
+.rhyme-learning-modes{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;margin:24px auto 16px}
+.learning-mode-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 21px;border:none;border-radius:40px;background:#f4e6c3;color:#171717;font-family:inherit;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 4px 0 #e3d2a9;transition:transform .18s,background .18s}
+.learning-mode-button span{font-size:19px}
+.learning-mode-button:hover{transform:translateY(-2px);background:#ffe9b8}
+.learning-mode-button.active{background:#211f1b;color:#fffaf0;box-shadow:0 4px 0 #080807}
+.rhyme-player-controls{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:14px;margin:22px 0}
+.rhyme-player-controls button{padding:14px 27px;border:none;border-radius:30px;background:#f3e6c5;color:#29241e;font-family:inherit;font-size:16px;font-weight:800;cursor:pointer;box-shadow:0 5px 0 #dfcea5;transition:transform .2s}
+.rhyme-player-controls button:hover:not(:disabled){transform:translateY(-3px)}
+.rhyme-player-controls button:disabled{opacity:.45;cursor:not-allowed}
+.rhyme-extra-controls{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:22px;margin:25px auto 15px;padding:15px;background:#f8edd2;border-radius:22px}
+.rhyme-extra-controls label{display:flex;align-items:center;gap:10px;color:#40372b;font-size:14px;font-weight:800}
+.rhyme-extra-controls select{padding:9px 13px;border:1px solid #dfcda6;border-radius:18px;background:#fffdf7;color:#302a23;font-family:inherit;font-weight:700;cursor:pointer}
+.rhyme-repeat input{width:17px;height:17px;accent-color:#b58a35;cursor:pointer}
+.rhyme-note{margin-top:22px;color:#887653;font-size:14px;line-height:1.6;text-align:center}
+.rhyme-back:focus-visible,.rhyme-card:focus-visible,.rhyme-player-controls button:focus-visible,.learning-mode-button:focus-visible{outline:3px solid #e8a928;outline-offset:4px}
+@keyframes rhymeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@media (max-width:650px){
+.rhymes-page{padding:20px 12px 40px}.rhymes-header{flex-direction:column;align-items:flex-start}.rhyme-language-selector{justify-content:flex-start}
+.rhymes-library,.rhyme-player-card{padding:17px;border-radius:23px}.rhymes-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.rhyme-cover>span{width:105px;height:105px;font-size:55px}.rhyme-extra-controls{flex-direction:column}
+.rhyme-learning-modes{flex-direction:column}.learning-mode-button{width:100%}}
+@media (prefers-reduced-motion:reduce){.karaoke-line,.rhyme-cover>span{transition:none;animation:none}}

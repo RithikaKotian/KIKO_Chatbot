@@ -1,0 +1,26 @@
+node_modules
+dist
+.env
+.venv
+__pycache__
+kiko.db
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment variables
+.env
+.env.*
+
+# Node
+node_modules/
+dist/
+
+# Database
+*.db
+
+# IDE
+.vscode/
+.idea/

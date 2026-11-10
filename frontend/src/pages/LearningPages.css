@@ -1,0 +1,759 @@
+
+/* =====================================================
+   KIKO LEARNING WORLD
+   Complete LearningPages.css
+===================================================== */
+
+/* ================= BASE ================= */
+
+.lp {
+  --lp-primary: #6c63d9;
+  --lp-secondary: #ff9f68;
+  --lp-text: #34344a;
+  --lp-muted: #77778c;
+  --lp-card: #ffffff;
+  --lp-border: #e9e6f4;
+
+  min-height: 100vh;
+  padding: 24px;
+  background: linear-gradient(135deg, #fff7e8, #f0edff);
+  color: var(--lp-text);
+  font-family: "Nunito", "Segoe UI", sans-serif;
+  box-sizing: border-box;
+}
+
+.lp *,
+.lp *::before,
+.lp *::after {
+  box-sizing: border-box;
+}
+
+.lp button {
+  font: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lp button:focus-visible {
+  outline: 3px solid #6c63d9;
+  outline-offset: 3px;
+}
+
+.lp button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* ================= AGE THEMES ================= */
+
+.lp--1-3 {
+  --lp-primary: #ff9b75;
+  --lp-secondary: #ffcf70;
+}
+
+.lp--4-6 {
+  --lp-primary: #6c9ee8;
+  --lp-secondary: #9c83e8;
+}
+
+.lp--7-10 {
+  --lp-primary: #6c63d9;
+  --lp-secondary: #42bda5;
+}
+
+/* ================= BACK BUTTON ================= */
+
+.lp-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 19px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: var(--lp-primary);
+  font-size: 15px;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(50, 40, 90, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.lp-back:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(50, 40, 90, 0.12);
+}
+
+/* ================= MAIN SHEET ================= */
+
+.lp-sheet {
+  width: 100%;
+  max-width: 1100px;
+  min-height: 650px;
+  margin: 0 auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 28px;
+  box-shadow: 0 12px 45px rgba(65, 50, 110, 0.09);
+}
+
+/* ================= HEADER ================= */
+
+.lp-head {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding-bottom: 23px;
+  border-bottom: 1px solid var(--lp-border);
+}
+
+.lp-logo {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 65px;
+  height: 65px;
+  background: #fff1cf;
+  border-radius: 20px;
+  font-size: 38px;
+}
+
+.lp-head h1 {
+  margin: 0;
+  color: var(--lp-text);
+  font-size: clamp(23px, 4vw, 32px);
+  font-weight: 900;
+}
+
+.lp-head p {
+  margin: 5px 0 0;
+  color: var(--lp-muted);
+  font-size: 15px;
+}
+
+.lp-age {
+  margin-left: auto;
+  flex-shrink: 0;
+  padding: 9px 14px;
+  border-radius: 20px;
+  background: #f1edff;
+  color: var(--lp-primary);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* ================= HEADINGS ================= */
+
+.lp-ask {
+  margin: 28px 0 9px;
+  color: var(--lp-text);
+  font-size: clamp(21px, 3.5vw, 27px);
+  font-weight: 900;
+}
+
+.lp-sub {
+  margin: 0 0 24px;
+  color: var(--lp-muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.lp-hint {
+  color: var(--lp-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ================= SUBJECT GRID ================= */
+
+.lp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 19px;
+  margin-top: 22px;
+}
+
+.lp-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 215px;
+  padding: 22px;
+  border: 2px solid transparent;
+  border-radius: 22px;
+  text-align: left;
+  color: var(--lp-text);
+  box-shadow: 0 5px 15px rgba(40, 40, 80, 0.05);
+  transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+}
+
+.lp-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--lp-primary);
+  box-shadow: 0 12px 25px rgba(40, 40, 80, 0.11);
+}
+
+.lp-icon {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 17px;
+  font-size: 34px;
+}
+
+.lp-card strong {
+  font-size: 19px;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.lp-card small {
+  margin-top: 8px;
+  color: #68687c;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.lp-go {
+  margin-top: auto;
+  padding-top: 17px;
+  color: var(--lp-primary);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+/* ================= STAGE BUTTONS ================= */
+
+.lp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.lp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 45px;
+  padding: 11px 19px;
+  border: 2px solid var(--lp-primary);
+  border-radius: 14px;
+  background: var(--lp-primary);
+  color: white;
+  font-size: 14px;
+  font-weight: 900;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.lp-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(60, 60, 120, 0.16);
+}
+
+.lp-btn--ghost {
+  background: white;
+  color: var(--lp-primary);
+  border-color: var(--lp-border);
+}
+
+.lp-btn--ghost:hover:not(:disabled) {
+  background: #f5f2ff;
+  border-color: var(--lp-primary);
+}
+
+/* ================= FLASHCARD PANEL ================= */
+
+.lp-panel {
+  width: 100%;
+  margin: 20px auto;
+  padding: 25px;
+  background: #ffffff;
+  border: 1px solid var(--lp-border);
+  border-radius: 22px;
+  box-shadow: 0 5px 18px rgba(50, 40, 90, 0.045);
+}
+
+.lp-center {
+  text-align: center;
+}
+
+.lp-show {
+  display: flex;
+  min-height: 270px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+}
+
+.lp-big {
+  max-width: 100%;
+  color: var(--lp-text);
+  font-size: clamp(48px, 8vw, 75px);
+  font-weight: 900;
+  line-height: 1.5;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.lp-note {
+  max-width: 650px;
+  margin: 8px auto;
+  color: #56566e;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.lp-show .lp-btn {
+  margin-top: 10px;
+}
+
+/* ================= FLASHCARD CHIPS ================= */
+
+.lp-chips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.lp-chip {
+  display: grid;
+  place-items: center;
+  min-height: 58px;
+  padding: 12px 9px;
+  background: #f5f3ff;
+  color: #49446d;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 900;
+  transition: transform 0.18s, background 0.18s;
+}
+
+.lp-chip:hover {
+  transform: translateY(-2px);
+  background: #ece8ff;
+}
+
+.lp-chip.is-on {
+  background: #e8e2ff;
+  border-color: var(--lp-primary);
+  color: var(--lp-primary);
+}
+
+/* ================= QUIZ ================= */
+
+.lp-q {
+  margin: 0 0 22px;
+  color: var(--lp-text);
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.lp-opts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.lp-opt {
+  min-height: 65px;
+  padding: 14px;
+  background: #f5f4ff;
+  color: var(--lp-text);
+  border: 2px solid #e9e6fa;
+  border-radius: 15px;
+  font-size: 17px;
+  font-weight: 800;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.lp-opt:hover {
+  transform: translateY(-2px);
+  border-color: var(--lp-primary);
+}
+
+.lp-opt.is-right {
+  background: #e3f7e9;
+  border-color: #53bd79;
+  color: #21683b;
+}
+
+.lp-opt.is-wrong {
+  background: #ffe9e8;
+  border-color: #ef8580;
+  color: #a63c38;
+}
+
+.lp-feedback {
+  margin-top: 23px;
+  padding: 17px;
+  background: #f2f0ff;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.lp-feedback p {
+  color: var(--lp-text);
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 700;
+}
+
+.lp-feedback .lp-btn {
+  margin-top: 10px;
+}
+
+/* ================= WRITING NOTEBOOK ================= */
+
+.lp-writing {
+  margin-top: 22px;
+  padding: 22px;
+  background: #fffaf0;
+  border: 2px solid #f1dcae;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.lp-writing h3 {
+  margin: 0 0 10px;
+  color: #684b26;
+  font-size: 23px;
+  font-weight: 900;
+}
+
+.lp-writing > p {
+  color: #705f49;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.lp-writing-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  margin: 15px auto 18px;
+  padding: 18px;
+  background: #ffffff;
+  border: 1px dashed #d9bd83;
+  border-radius: 14px;
+}
+
+.lp-writing-prompt small {
+  color: #8a765a;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.lp-writing-prompt strong {
+  color: #315c9b;
+  font-size: clamp(35px, 7vw, 48px);
+  font-weight: 900;
+  line-height: 1.5;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.lp-writing-hint {
+  margin: 12px 0;
+  font-size: 14px;
+}
+
+/* ================= WRITING CANVAS ================= */
+
+.lp-writing-canvas-wrap {
+  width: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 2px solid #d9e3f0;
+  border-radius: 14px;
+
+  /* Notebook-style writing lines */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 42px,
+    #dce8f5 43px,
+    transparent 44px
+  );
+}
+
+.lp-writing-canvas {
+  display: block;
+  width: 100%;
+  height: 220px;
+  cursor: crosshair;
+  touch-action: none;
+  user-select: none;
+}
+
+/* ================= WRITING BUTTONS ================= */
+
+.lp-writing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.lp-writing-actions button {
+  min-width: 105px;
+}
+
+.lp-writing-actions button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ================= PRACTICE PANEL ================= */
+
+.lp-panel h3 {
+  color: var(--lp-text);
+  font-size: 21px;
+  font-weight: 900;
+}
+
+.lp-panel > p {
+  line-height: 1.7;
+}
+
+/* ================= SCROLLBAR ================= */
+
+.lp-chips::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.lp-chips::-webkit-scrollbar-thumb {
+  background: #d5d0eb;
+  border-radius: 10px;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+  .lp-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lp-sheet {
+    padding: 23px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+  .lp {
+    padding: 12px;
+  }
+
+  .lp-back {
+    margin-bottom: 12px;
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+
+  .lp-sheet {
+    min-height: auto;
+    padding: 17px;
+    border-radius: 20px;
+  }
+
+  .lp-head {
+    gap: 11px;
+    padding-bottom: 17px;
+  }
+
+  .lp-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    font-size: 28px;
+  }
+
+  .lp-head h1 {
+    font-size: 20px;
+  }
+
+  .lp-head p {
+    font-size: 12px;
+  }
+
+  .lp-age {
+    padding: 7px 9px;
+    font-size: 10px;
+  }
+
+  .lp-ask {
+    margin-top: 22px;
+    font-size: 21px;
+  }
+
+  .lp-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+  }
+
+  .lp-card {
+    min-height: 185px;
+    padding: 14px;
+    border-radius: 17px;
+  }
+
+  .lp-icon {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 11px;
+    font-size: 27px;
+  }
+
+  .lp-card strong {
+    font-size: 15px;
+  }
+
+  .lp-card small {
+    font-size: 11px;
+  }
+
+  .lp-go {
+    font-size: 12px;
+  }
+
+  .lp-actions {
+    gap: 8px;
+  }
+
+  .lp-actions .lp-btn {
+    flex: 1 1 30%;
+    min-width: 90px;
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+
+  .lp-panel {
+    padding: 17px;
+    border-radius: 17px;
+  }
+
+  .lp-show {
+    min-height: 220px;
+  }
+
+  .lp-big {
+    font-size: 49px;
+  }
+
+  .lp-note {
+    font-size: 15px;
+  }
+
+  .lp-chips {
+    grid-template-columns: repeat(auto-fit, minmax(52px, 1fr));
+    gap: 8px;
+  }
+
+  .lp-chip {
+    min-height: 49px;
+    padding: 9px 5px;
+    font-size: 14px;
+  }
+
+  .lp-opts {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .lp-opt {
+    min-height: 55px;
+    font-size: 15px;
+  }
+
+  .lp-q {
+    font-size: 19px;
+  }
+
+  .lp-writing {
+    padding: 14px;
+    border-radius: 17px;
+  }
+
+  .lp-writing h3 {
+    font-size: 19px;
+  }
+
+  .lp-writing-prompt {
+    padding: 12px;
+  }
+
+  .lp-writing-prompt strong {
+    font-size: 34px;
+  }
+
+  .lp-writing-canvas {
+    height: 190px;
+  }
+
+  .lp-writing-actions {
+    gap: 8px;
+  }
+
+  .lp-writing-actions button {
+    flex: 1 1 90px;
+    min-width: 0;
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+
+/* ================= SMALL PHONES ================= */
+
+@media (max-width: 360px) {
+  .lp {
+    padding: 8px;
+  }
+
+  .lp-sheet {
+    padding: 12px;
+  }
+
+  .lp-grid {
+    gap: 8px;
+  }
+
+  .lp-card {
+    padding: 11px;
+  }
+
+  .lp-card strong {
+    font-size: 13px;
+  }
+
+  .lp-age {
+    display: none;
+  }
+}
+
+/* ================= REDUCED MOTION ================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .lp *,
+  .lp *::before,
+  .lp *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
