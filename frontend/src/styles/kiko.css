@@ -302,3 +302,107 @@
   border-radius: 50%;
   aspect-ratio: 1;
 }
+
+/* KIKO Drawing Challenges */
+
+.challenge-intro {
+  background: #fff1cc;
+  text-align: center;
+}
+
+.challenge-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.challenge-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #fff9f0;
+}
+
+.challenge-card h3 {
+  color: #292c78;
+  margin: 8px 0;
+}
+
+.challenge-card p {
+  line-height: 1.6;
+}
+
+.active-challenge {
+  background: #fff1cc;
+  border-color: #ffc93c;
+}
+
+.evaluate-button {
+  display: block;
+  width: 100%;
+  margin: 22px auto;
+  padding: 16px;
+  font-size: 18px;
+}
+
+.evaluate-button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.drawing-result {
+  text-align: center;
+  background: #fff9f0;
+  padding: 24px;
+}
+
+.result-stars {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  font-size: 38px;
+  margin: 18px 0;
+}
+
+.evaluation-mode {
+  margin: 15px 0;
+  color: #665c70;
+  font-weight: 700;
+}
+
+.brush-size-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 450px;
+  margin: 12px 0 18px;
+}
+
+.brush-size-control input[type="range"] {
+  flex: 1;
+  min-width: 80px;
+  cursor: pointer;
+  accent-color: #6c4de6;
+}
+
+.brush-preview {
+  display: inline-block;
+  flex-shrink: 0;
+  min-width: 4px;
+  min-height: 4px;
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50%;
+  aspect-ratio: 1;
+}
+
+@media (max-width: 480px) {
+  .challenge-list {
+    grid-template-columns: 1fr;
+  }
+
+  .result-stars {
+    font-size: 30px;
+  }
+}
